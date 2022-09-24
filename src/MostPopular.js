@@ -31,6 +31,8 @@ export const MostPopular = () => {
 
 			<div className="menu">
 			<Song  />
+			<Song  />
+			<Song  />
 			
 			</div>
 			<NavbarBottomAdd />

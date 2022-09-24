@@ -20,7 +20,7 @@ export const NavbarBottomQueue = () => {
 					<i className="material-icons nav__icon navitem" style={{
 						fontSize: "60px"
 					}}>people</i>
-					<span className="nav__text strong">People</span>
+					<span className="nav__text strong">Session</span>
 				</Link>
 				<Link to="/" className="nav__link nav__link--active navitem-link" style={{
 					textDecoration: "none",
