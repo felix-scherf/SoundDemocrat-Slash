@@ -13,10 +13,10 @@ export const Song = (props) => {
 	return (
 		<div className="song">
 			<div className="song-info">
-				<p className="song-name"><strong>{props.title}</strong>  </p>
+				<p className="song-name"><strong>{props.title}</strong>  </p> 
 				<p className="song-artist">{props.artist}</p>
 			</div>
-			<div className="right" onClick={voteHandler}>
+			<div className="voting" onClick={voteHandler}>
 				<img alt="vote"  className="upvote-button" src={upvoteempty} />
 				<h1 className="voting-counter">0</h1>
 			</div>
