@@ -98,6 +98,12 @@ font-size: 25px;
   left: 15px;
   font-size: 40px;
 }
+.song-artist{
+  float: left;
+  position: relative;
+  left: 15px;
+  font-size: 30px;
+}
 .first-button {
   border-top-left-radius: 50px;
   border-bottom-left-radius: 50px;
