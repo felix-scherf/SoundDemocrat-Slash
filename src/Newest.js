@@ -52,7 +52,7 @@ export const Newest = () => {
 
        
 
-        <Song song="song title" />
+        <Song song="Song title" />
 
 
 
