@@ -13,7 +13,7 @@ export const NavbarBottomAdd = () => {
 			<Link to="/info" className="info">
 				<img alt="img" className="info-img" src={infocircle} /></ Link>
 			<nav className="nav under-navbar">
-				<Link to="/people" className="nav__link navitem-link hidden" style={{
+				<Link to="/session" className="nav__link navitem-link" style={{
 					textDecoration: "none",
 					color: "white"
 				}}>

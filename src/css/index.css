@@ -201,6 +201,18 @@ height: 130px;
 
 
 }
+
+.session-div {
+margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  
+}
+
+
 .add-a-song {
   position: relative;
   bottom: 5px;
@@ -273,11 +285,15 @@ height: 130px;
   float: right;
   z-index: 10;
 }
-.people-amount {
-  position: relative;
-  bottom: 5px;
-  left: 20px;
+
+
+.session-headline {
+
+padding-top: 15px;
+padding-bottom: 10px;
 }
+
+
 .people-upvotes {
   font-size: 15px;
 }
