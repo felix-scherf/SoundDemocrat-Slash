@@ -224,6 +224,7 @@ justify-content: space-between;
 }
 .session-input{
   border-radius: 25px 0px 0px 25px;
+  border-color: black;
 }
 .session-button{
   border-radius: 0px 25px 25px 0px;

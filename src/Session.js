@@ -64,10 +64,10 @@ export const Session = () => {
 			<div className="session-div">
 				<label className="nickname" for="nickname"> <strong>Nickname:    </strong></label>
 				<input className="session-input" type="text" onChange={onChangeNickname}/>
-				<button className="session-button btn-outline-dark" onClick={createHandler}>Create session</button> <br /> <br />
+				<button className="session-button btn-dark" onClick={createHandler}>Create session</button> <br /> <br />
 				<label className="nickname" for="nickname"> <strong>Session-Id:    </strong></label>
 				<input  className="session-input" type="text" onChange={onChangeSessionId}/>
-				<button className="session-button btn-outline-dark" onClick={joinHandler}>Join session</button>
+				<button className="session-button btn-dark" onClick={joinHandler}>Join session</button>
 			</div>
 			<NavbarBottomQueue />
 		</div>
