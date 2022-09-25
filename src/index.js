@@ -18,10 +18,6 @@ import {Provider} from "react-redux";
 
 import store from './store'
 
-const deezer = document.createElement("script")
-deezer.src = "https://e-cdns-files.dzcdn.net/js/min/dz.js"
-document.body.appendChild(deezer)
-
 const app = document.getElementById("app");
 
 ReactDOM.render(

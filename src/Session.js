@@ -29,7 +29,7 @@ export const Session = () => {
 		const data = await res.json()
 		console.log(data)
 
-		dispatch(set({ id: data['sessionId'], token: data['token']}))
+		dispatch(set({ id: data['sessionId'], token: data['token'], creator: true, playerinit: false}))
 	}
 
 	const joinHandler = async () => {
@@ -42,7 +42,7 @@ export const Session = () => {
 		})
 		const data = await res.json()
 		console.log(data)
-		dispatch(set({ id: sessionId, token: data['token'] }))
+		dispatch(set({ id: sessionId, token: data['token'], creator: false, playerinit: false}))
 	}
 
 	const onChangeNickname = (e) => {
