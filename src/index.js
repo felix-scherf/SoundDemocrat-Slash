@@ -14,15 +14,21 @@ import { Session } from "./Session";
 
 import { Info } from "./Info";
 
+import {Provider} from "react-redux";
+
+import store from './store'
+
 const app = document.getElementById("app");
 ReactDOM.render(
 	<BrowserRouter>
-		<Routes>
-		<Route path="/" element={<Newest />} />
-		<Route path="/most-popular" element={<MostPopular />} />
-		<Route path="/add" element={<Add />} />
-		<Route path="/session" element={<Session />} />
-		<Route path="/info" element={<Info />} />
-		</Routes>
+		<Provider store={store}>
+			<Routes>
+				<Route path="/" element={<Newest />} />
+				<Route path="/most-popular" element={<MostPopular />} />
+				<Route path="/add" element={<Add />} />
+				<Route path="/session" element={<Session />} />
+				<Route path="/info" element={<Info />} />
+			</Routes>
+		</Provider>
 	</BrowserRouter>,
 	app);

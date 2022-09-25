@@ -2,17 +2,36 @@ import {Link} from "react-router-dom";
 import {NavbarBottomAdd} from "./NavbarBottomAdd";
 import {Song} from "./Song";
 import React, {useState, useEffect} from 'react';
+import {useSelector} from "react-redux";
+
+import config from "./config"
 
 
 export const Newest = () => {
-    const url = `http://49.12.207.165:4000/api/session/1/list`;
+    const sessionId = useSelector((state) => state.session.id)
+    const token = useSelector((state) => state.session.token)
+
+    const url = config.api_url + "session/" + sessionId + "/list";
+
+    var change = {};
 
     const fetchData = async () => {
-        const res = await fetch(url)
+        const res = await fetch(url, {
+            headers: {
+                'Authorization': token,
+            }
+        })
         const data = await res.json()
-        console.log(data)
         const arrayOfLists = data.map(
-            record => <Song id={record.id} title={record.title} artist={record.artist}/>
+            record => <Song
+                key={record.id}
+                id={record.id}
+                title={record.title}
+                artist={record.artist}
+                votes={record.votes}
+                active={record.haveVoted}
+                change={change}
+            />
         )
         return arrayOfLists
     }
@@ -22,7 +41,7 @@ export const Newest = () => {
 
     useEffect(() => {
         fetchData().then(result => setSongs(result));
-    }, []);
+    }, [ change ]); // TODO:
 
     return (
         <div>

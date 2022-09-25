@@ -1,37 +1,76 @@
 import { Link } from "react-router-dom";
 import { NavbarBottomQueue } from "./NavbarBottomQueue";
+import {useDispatch} from "react-redux";
+import {set} from "./features/session/sessionSlice";
+import {useState} from "react";
+import config from "./config";
 
 
 export const Session = () => {
+	const createUrl = config.api_url + "/create"
 
+	const joinUrl = (id) => {
+		return config.api_url + "session/" + id + "/join"
+	}
+
+	const [nickname, setNickname] = useState("")
+	const [sessionId, setSessionId] = useState(0)
+
+	const dispatch = useDispatch()
+
+	const createHandler = async () => {
+		const res = await fetch(createUrl, {
+			method: 'PUT',
+			headers: {
+				'Content-Type': 'application/json',
+			},
+			body: JSON.stringify({ nickname: nickname.toString()})
+		})
+		const data = await res.json()
+		console.log(data)
+
+		dispatch(set({ id: data['sessionId'], token: data['token']}))
+	}
+
+	const joinHandler = async () => {
+		const res = await fetch(joinUrl(sessionId), {
+			method: 'PUT',
+			headers: {
+				'Content-Type': 'application/json',
+			},
+			body: JSON.stringify({ nickname: nickname.toString() })
+		})
+		const data = await res.json()
+		console.log(data)
+		dispatch(set({ id: sessionId, token: data['token'] }))
+	}
+
+	const onChangeNickname = (e) => {
+		setNickname(e.target.value)
+	}
+
+	const onChangeSessionId = (e) => {
+		setSessionId(e.target.value)
+	}
 
 
 
 	return (
 		<div>
 			<div className="people-navbar">
-
-
-
 				<h2 className="session-headline">Session </h2>
-
-
 			</div>
 
 			<div className="session-div">
-
-				<h1>Create a session!</h1>
-				<br />
-				<h1>Join a session!</h1>
+				<label for="nickname">Nickname</label>
+				<input type="text" onChange={onChangeNickname}/><br />
+				<button onClick={createHandler}>Create session</button> <br />
+				<input type="text" onChange={onChangeSessionId}/>
+				<button onClick={joinHandler}>Join session</button>
 			</div>
 			<NavbarBottomQueue />
 		</div>
 
 
 	)
-
-
-
-
-
 }
