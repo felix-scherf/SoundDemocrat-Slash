@@ -29,9 +29,6 @@ export const Song = (props) => {
 		})
 		console.log(res)
 
-		// const data = await res.json()
-		// console.log(data)
-
 		props.onVote(props.id)
 	}
 

@@ -51,6 +51,7 @@ export const Newest = () => {
             <div className="menu">
                 {songs}
             </div>
+            <div id="dz-root"></div>
             <NavbarBottomAdd/>
         </div>
 
