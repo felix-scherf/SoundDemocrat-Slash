@@ -46,7 +46,7 @@ export const Newest = () => {
     return (
         <div>
             <div className="header">
-                <h2 className="queue-headline">Queue: </h2>
+                <h2 className="queue-headline">Queue: (Session: {sessionId})</h2>
             </div>
             <div className="menu">
                 {songs}
