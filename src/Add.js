@@ -59,10 +59,10 @@ export const Add = () => {
 	return (
 		<div>
 			<div className="search-header">
-				<br /> <h2 className="add-a-song">Add a song (Session: {sessionId})</h2>
+				<br /> <h2 className="add-a-song">Add a song</h2>
 				<div className="search-div" >
 					<input className=" search " type="search" placeholder=" Search a song" onChange={onChangeQuery}/>
-					<button onClick={submitHandler}>Search</button>
+					<button className="add-button btn-light" onClick={submitHandler}>Search</button>
 				</div>
 				<br />
 			</div>

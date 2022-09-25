@@ -210,7 +210,25 @@ display: flex;
 justify-content: space-between;
 
 }
+.nickname{
+  font-size: 25px;
+  position: relative;
+  right: 5px;
+  top: 2px;
+}
+.add-button{
 
+  margin-top: 5px;
+  margin-bottom: 0px;
+  border-radius: 50px;
+}
+.session-input{
+  border-radius: 25px 0px 0px 25px;
+}
+.session-button{
+  border-radius: 0px 25px 25px 0px;
+
+}
 .session-div {
 margin: 0;
   position: absolute;
@@ -218,6 +236,7 @@ margin: 0;
   left: 50%;
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
+ text-align: end;
   
 }
 
@@ -304,8 +323,8 @@ padding-bottom: 15px;
 
 .queue-headline {
 
-  padding-top: 15px;
-  padding-bottom: 15px;
+  padding-top: 0px;
+  padding-bottom: 5px;
   }
 
 
